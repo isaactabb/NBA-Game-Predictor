@@ -306,7 +306,7 @@ for (i in 1:nrow(tonight)) {
     home_players_to_remove <<- c("Team Totals")
     home_player_per_table <<- home_player_per_table[!(home_player_per_table$Player %in% home_players_to_remove), ]
     # Handle the error by skipping the remaining lines
-    message("An error occurred with the initial line, skipping subsequent processing.")
+    message("No injuries for home team.")
   })
   
   # Same try catch logic except for away teams
@@ -340,7 +340,7 @@ for (i in 1:nrow(tonight)) {
     away_players_to_remove <<- c(away_players_to_remove, "Team Totals")
     away_player_per_table <<- away_player_per_table[!(away_player_per_table$Player %in% away_players_to_remove), ]
     # Handle the error by skipping the remaining lines
-    message("An error occurred with the initial line, skipping subsequent processing.")
+    message("No injuries for away team.")
   })
   
   # Add a new column to player_per_table by multiplying 0.5 * G and MP
